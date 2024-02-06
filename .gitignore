@@ -326,3 +326,4 @@ node_modules/ws/lib/websocket.js
 node_modules
 allure-results
 run
+allure-report
