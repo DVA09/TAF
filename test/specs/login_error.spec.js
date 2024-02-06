@@ -5,7 +5,7 @@ describe("Sauce Tests", () => {
 
     browser.url("https://www.saucedemo.com/");
 
-    await LoginPageError.login("performance_glitch_user", "secret_sauce");
+    await LoginPageError.login("error_user", "secret_sauce");
 
     await LoginPageError.checkTitle('Swag Labs');
   });
