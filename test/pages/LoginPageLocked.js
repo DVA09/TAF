@@ -1,4 +1,4 @@
-class LoginPage {
+class LoginPageLocked {
 
   get usernameTextbox() {
     return $("#user-name");
@@ -13,7 +13,7 @@ class LoginPage {
   }
 
   get loginMessage() {
-    return $(".app_logo");
+    return $("h3[data-test='error']");
   }
 
   async login(userName, password) {
@@ -25,6 +25,8 @@ class LoginPage {
   async checkTitle(title){
     await expect(this.loginMessage).toHaveTextContaining(title);
   }
+
+  
 }
 
-module.exports = new LoginPage();
+module.exports = new LoginPageLocked();
