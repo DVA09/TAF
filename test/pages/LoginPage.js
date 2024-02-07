@@ -23,11 +23,11 @@ class LoginPageStandard {
     }
   
     get passwordTextboxName() {
-      return $("[id='password']");
+      return $("[name='password']");
     }
   
     get loginButtonName() {
-      return $("[id='login-button']");
+      return $("[name='login-button']");
     }
   
     get loginMessageName() {
