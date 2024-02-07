@@ -1,0 +1,20 @@
+{
+    "url": "https://www.saucedemo.com/",    
+    "title": "Swag Labs",
+    "username": [
+        "standard_user",
+        "locked_out_user",
+        "problem_user",
+        "performance_glitch_user",
+        "error_user",
+        "visual_user",
+        ""
+    ],
+    "password": "secret_sauce",
+    "passwordEmpty": "",
+    "errorMessage": [
+        "Epic sadface: Username and Password is required",
+        "Epic sadface: Username is required",
+        "Epic sadface: Username is required"
+    ]
+}
