@@ -9,7 +9,7 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginCSS(login.username[0], login.password);
 
-    await LoginPage.checkTitle(login.title);
+    await expect(LoginPage.loginMessageCSS).toHaveTextContaining(login.title);
   });
 
   it("Login Test Locked", async () => {
@@ -18,7 +18,7 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginName(login.username[1], login.password);
 
-    await LoginPage.checkError('Epic sadface: Sorry, this user has been locked out.');
+    await expect(LoginPage.loginMessageName).toHaveTextContaining(login.errorMessage[3]);
   });
 
   it("Login Test Problem", async () => {
@@ -27,7 +27,7 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginXpath(login.username[2], login.password);
 
-    await LoginPage.checkDisplayed();
+    await expect(LoginPage.burgerMenuXpath).toBeDisplayed();
   });
 
   it("Login Test Perfomance", async () => {
@@ -36,7 +36,8 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginName(login.username[3], login.password);
 
-    await LoginPage.checkTitle(login.title);
+    await expect(LoginPage.loginMessageCSS).toHaveTextContaining(login.title);
+
   });
 
   it("Login Test Error", async () => {
@@ -44,8 +45,8 @@ describe("Sauce Tests", () => {
     browser.url(login.url);
 
     await LoginPage.loginXpath(login.username[4], login.password);
-
-    await LoginPage.checkDisplayed();
+    
+    await expect(LoginPage.burgerMenuXpath).toBeDisplayed();
   });
 
   it("Login Test Visual", async () => {
@@ -54,7 +55,7 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginCSS(login.username[5], login.password);
 
-    await LoginPage.checkTitle(login.title);
+    await expect(LoginPage.loginMessageCSS).toHaveTextContaining(login.title);
   });
 
   it("Login Test Empty", async () => {
@@ -63,7 +64,7 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginXpath(login.username[6], login.passwordEmpty);
 
-    await LoginPage.checkError(login.errorMessage[0]);
+    await expect(LoginPage.loginMessageName).toHaveTextContaining(login.errorMessage[0]);
   });
 
   it("Login Test Empty Password", async () => {
@@ -72,7 +73,7 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginName(login.username[6], login.password);
 
-    await LoginPage.checkError(login.errorMessage[1]);
+    await expect(LoginPage.loginMessageName).toHaveTextContaining(login.errorMessage[1]);
   });
 
   it("Login Test Empty Username", async () => {
@@ -81,7 +82,8 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginXpath(login.username[6], login.password);
 
-    await LoginPage.checkError(login.errorMessage[2]);
+    await expect(LoginPage.loginMessageName).toHaveTextContaining(login.errorMessage[2]);
+
   });
 
 });

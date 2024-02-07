@@ -73,19 +73,7 @@ class LoginPageStandard {
       await this.usernameTextboxXpath.setValue(userName);
       await this.passwordTextboxXpath.setValue(password);
       await this.loginButtonXpath.click();
-    }
-  
-    async checkTitle(title){
-      await expect(this.loginMessageCSS).toHaveTextContaining(title);
-    }
-
-    async checkError(e){
-      await expect(this.loginMessageName).toHaveTextContaining(e);
-    }  
-
-    async checkDisplayed(){
-      await expect(this.burgerMenuXpath).toBeDisplayed();
-    }  
+    } 
   }
   
   module.exports = new LoginPageStandard();

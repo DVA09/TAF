@@ -15,6 +15,7 @@
     "errorMessage": [
         "Epic sadface: Username and Password is required",
         "Epic sadface: Username is required",
-        "Epic sadface: Username is required"
+        "Epic sadface: Username is required",
+        "Epic sadface: Sorry, this user has been locked out."
     ]
 }
