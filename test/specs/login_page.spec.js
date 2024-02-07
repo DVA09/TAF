@@ -64,7 +64,7 @@ describe("Sauce Tests", () => {
 
     await LoginPage.loginXpath(login.username[6], login.passwordEmpty);
 
-    await expect(LoginPage.loginMessageName).toHaveTextContaining(login.errorMessage[0]);
+    await expect(LoginPage.loginMessageName).toHaveTextContaining([login.errorMessage[0], login.errorMessage[1]]);
   });
 
   it("Login Test Empty Password", async () => {
