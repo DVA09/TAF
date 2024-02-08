@@ -15,8 +15,6 @@ class LoginPage {
     get loginMessageCSS() {
       return $(".app_logo");
     }
-    
-
 
     get usernameTextboxName() {
       return $("[name='user-name']");
@@ -34,8 +32,6 @@ class LoginPage {
       return $("h3[data-test='error']");
     }
 
-
-
     get usernameTextboxXpath() {
       return $("//input[@type='text']");
     }
@@ -51,8 +47,7 @@ class LoginPage {
     get loginMessageXpath() {
       return $("//*[@id='login_button_container']/div/form/div[3]");
     }
-    
-    
+        
     get burgerMenuXpath() {
       return $("//*[@id='react-burger-menu-btn']");
     }
