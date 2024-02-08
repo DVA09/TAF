@@ -11,7 +11,7 @@ class ProductPage {
     get iconBurgerMenuItem2() {
         return $("//*[@id='about_sidebar_link']");
     }
-    get iconBurgerItem3() {
+    get iconBurgerMenuItem3() {
         return $("//*[@id='logout_sidebar_link']");
     }
     get iconBurgerMenuItem4() {
@@ -38,6 +38,28 @@ class ProductPage {
     get productSort() {
         return $("//*[@id='header_container']/div[2]/div/span/select");
     }
+    
+    get activeOption() {
+        return $("//*[@id='header_container']/div[2]/div/span/span");
+    }
+
+    get sortOption1() {
+        return $("//*[@id='header_container']/div[2]/div/span/select/option[1]");
+    }
+
+    get sortOption2() {
+        return $("//*[@id='header_container']/div[2]/div/span/select/option[2]");
+    }
+
+    get sortOption3() {
+        return $("//*[@id='header_container']/div[2]/div/span/select/option[3]");
+    }
+
+    get sortOption4() {
+        return $("//*[@id='header_container']/div[2]/div/span/select/option[4]");
+    }
+
+
 
     //Product card locators
     get productList() {
