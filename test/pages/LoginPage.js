@@ -1,4 +1,4 @@
-class LoginPageStandard {
+class LoginPage {
 
     get usernameTextboxCSS() {
       return $("#user-name");
@@ -76,4 +76,4 @@ class LoginPageStandard {
     } 
   }
   
-  module.exports = new LoginPageStandard();
+  module.exports = new LoginPage();
