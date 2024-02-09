@@ -47,6 +47,8 @@ describe("Product Page", () => {
 
         await expect(ProductPage.iconBurgerMenuItem4).toBeClickable();
 
+        await ProductPage.iconBurgerMenuCross.click();
+
     });
 
     it("Product page title test", async () => {
@@ -121,6 +123,36 @@ describe("Product Page", () => {
         await expect(ProductPage.sortOption4).toBeDisplayed();        
 
         await expect(ProductPage.activeOption).toHaveText('Price (high to low)');
+
+    });
+    
+    it("Inventory card", async () => {
+
+        await expect(ProductPage.productImage).toBeClickable();
+
+        await expect(ProductPage.productImage).toBeClickable();
+
+        await expect(ProductPage.productImage).toBeClickable();
+
+    });
+    
+    it("Footer social", async () => {
+
+        await expect(ProductPage.social).toBeClickable();        
+
+    });
+    
+    it("Footer copy", async () => {
+
+        await expect(ProductPage.copyText).toHaveText("© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy");        
+
+    });
+
+    it("Log out", async () => {
+
+        await ProductPage.iconBurgerMenu.click();
+        
+        await ProductPage.iconBurgerMenuItem3.click();
 
     });
 })
