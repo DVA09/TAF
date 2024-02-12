@@ -101,11 +101,19 @@ describe("Product Page", () => {
   });
 
   it("Inventory card", async () => {
-    await expect(ProductPage.productImage).toBeClickable();
+    await expect(ProductPage.productName).toBeClickable();
 
     await expect(ProductPage.productImage).toBeClickable();
 
-    await expect(ProductPage.productImage).toBeClickable();
+    await expect(ProductPage.productBtn).toBeClickable();
+  });
+  
+  it("Inventory card Name", async () => {
+    await expect(ProductPage.productName).toHaveTextContaining('Sauce Labs');  
+  });
+  
+  it("Inventory card Description", async () => {
+    await expect(ProductPage.productDescription).toHaveTextContaining('carry.allTheThings()');  
   });
 
   //Footer
