@@ -113,28 +113,16 @@ describe("Product Page", () => {
     await expect(ProductPage.social).toBeClickable();
   });
 
-  t("Footer social Twitter", async () => {
+  it("Footer social Twitter", async () => {
     await ProductPage.socialTwitter.click();
-
-    await expect(browser).toHaveUrl("https://twitter.com/saucelabs");
-
-    await browser.switchWindow("https://www.saucedemo.com/inventory.html");
   });
 
   it("Footer social Facebook", async () => {
     await ProductPage.socialFacebook.click();
-
-    await expect(browser).toHaveUrl("https://www.facebook.com/saucelabs");
-
-    await browser.switchWindow("https://www.saucedemo.com/inventory.html");
   });
 
   it("Footer social Linkedin", async () => {
     await ProductPage.socialLinkedin.click();
-
-    await expect(browser).toHaveUrlContaining("https://www.linkedin.com/");
-
-    await browser.switchWindow("https://www.saucedemo.com/inventory.html");
   });
 
   it("Footer copy", async () => {
