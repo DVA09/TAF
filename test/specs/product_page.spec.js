@@ -2,7 +2,7 @@ const ProductPage = require("../pages/ProductPage");
 const LoginPage = require("../pages/LoginPage");
 const login = require("../utils/login.json");
 const product = require("../utils/product.json");
-
+ 
 describe("Product Page", () => {
   //Header tests
   it("Burger Menu test", async () => {
@@ -101,11 +101,19 @@ describe("Product Page", () => {
   });
 
   it("Inventory card", async () => {
-    await expect(ProductPage.productImage).toBeClickable();
+    await expect(ProductPage.productName).toBeClickable();
 
     await expect(ProductPage.productImage).toBeClickable();
 
-    await expect(ProductPage.productImage).toBeClickable();
+    await expect(ProductPage.productBtn).toBeClickable();
+  });
+
+  it("Inventory card Name", async () => {
+    await expect(ProductPage.productName).toHaveTextContaining(/^(?!.*\(\)).*$/);      
+  });
+
+  it("Inventory card Description", async () => {
+    await expect(ProductPage.productDescription).toHaveTextContaining(/^(?!.*\(\)).*$/);      
   });
 
   //Footer

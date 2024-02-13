@@ -75,7 +75,7 @@ class ProductPage {
   }
 
   get productDescription() {
-    return $$(".inventory_item_description");
+    return $$(".inventory_item_desc");
   }
 
   get productImage() {
@@ -104,7 +104,7 @@ class ProductPage {
   }
 
   get copyText() {
-    return $$("//*[@id='page_wrapper']/footer/div");
+    return $("//*[@id='page_wrapper']/footer/div");
   }
 }
 

@@ -23,9 +23,5 @@
   "directories": {
     "test": "test"
   },
-  "description": "",
-  "dependencies": {
-    "chai": "^5.0.3",
-    "chai-webdriverio": "^1.0.0"
-  }
+  "description": ""
 }
