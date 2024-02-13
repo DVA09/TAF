@@ -102,6 +102,7 @@ describe("Product Page", () => {
 
   it("Inventory card", async () => {
     await expect(ProductPage.productName).toBeClickable();
+    await expect(ProductPage.productName).toBeClickable();
 
     await expect(ProductPage.productImage).toBeClickable();
 
