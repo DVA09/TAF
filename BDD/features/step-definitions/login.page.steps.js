@@ -193,4 +193,4 @@ When(/^open burger menu$/, async () => {
 
 When(/^log out from the page$/, async () => {
 	await $("//*[@id='logout_sidebar_link']").click();
-});-
+});
