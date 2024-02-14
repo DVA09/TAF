@@ -165,4 +165,32 @@ Then(/^description of the products don't have brackets$/, async () => {
 	await expect($$(".inventory_item_desc")).toHaveTextContaining(/^(?!.*\(\)).*$/);
 });
 
+Then(/^social icons to be clickable$/, async () => {
+	await expect($$(".social")).toBeClickable();
+});
 
+When(/^click on Twitter icon$/, async () => {
+	await $("//*[@id='page_wrapper']/footer/ul/li[1]/a").click();
+});
+
+When(/^click on Facebook icon$/, async () => {
+	await $("//*[@id='page_wrapper']/footer/ul/li[2]/a").click();
+});
+
+When(/^click on Linkedln icon$/, async () => {
+	await $("//*[@id='page_wrapper']/footer/ul/li[3]/a").click();
+});
+
+Then(/^copyright has text$/, async () => {
+	await expect($("//*[@id='page_wrapper']/footer/div")).toHaveText(
+    "© 2024 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
+  );
+});
+
+When(/^open burger menu$/, async () => {
+	await $("//*[@id='react-burger-menu-btn']").click();
+});
+
+When(/^log out from the page$/, async () => {
+	await $("//*[@id='logout_sidebar_link']").click();
+});-

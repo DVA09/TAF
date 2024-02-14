@@ -44,7 +44,13 @@ Feature: Test Login page
     Then button of the products is clickable
     Then names of the products don't have brackets
     Then description of the products don't have brackets
-
+    Then social icons to be clickable
+    When click on Twitter icon
+    When click on Facebook icon
+    When click on Linkedln icon
+    Then copyright has text
+    When open burger menu
+    And log out from the page
 
     
 
