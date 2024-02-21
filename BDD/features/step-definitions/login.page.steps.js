@@ -1,4 +1,4 @@
-const { Given, When, Then } = require("@wdio/cucumber-framework");
+const { Given, When, Then, And } = require("@wdio/cucumber-framework");
 
 Given(/^user is on login page$/, async () => {
   await browser.url("https://www.saucedemo.com/");
@@ -81,7 +81,7 @@ Then(/^filter icon to be displayed on the page$/, async () => {
   await expect($("//*[@id='header_container']/div[2]/div/span/select")).toBeDisplayed();
 });
 
-When(/^filter icon is clickable$/, async () => {
+Then(/^filter icon is clickable$/, async () => {
   await expect($("//*[@id='header_container']/div[2]/div/span/select")).toBeClickable();
 });
 
@@ -93,11 +93,9 @@ When(/^open list with filter options$/, async () => {
 	await $("//*[@data-test='product_sort_container']").click();
 });
 
-Then(/^1st filter option to be displayed$/, async () => {
+Then(/^1st filter option to be displayed and has text$/, async () => {
 	await expect($("//*[@id='header_container']/div[2]/div/span/select/option[1]")).toBeDisplayed();
-});
-
-Then(/^1st filter option has text$/, async () => {
+	
 	await expect($("//*[@id='header_container']/div[2]/div/span/select/option[1]")).toHaveText("Name (A to Z)");
 });
 
@@ -105,11 +103,9 @@ When(/^click on 2nd filter option$/, async () => {
 	await $("//*[@id='header_container']/div[2]/div/span/select/option[2]").click();
 });
 
-Then(/^2nd filter option to be displayed$/, async () => {
+Then(/^2nd filter option to be displayed and has text$/, async () => {
 	await expect($("//*[@id='header_container']/div[2]/div/span/select/option[2]")).toBeDisplayed();
-});
-
-Then(/^2nd filter option has text$/, async () => {
+	
 	await expect($("//*[@id='header_container']/div[2]/div/span/span")).toHaveText("Name (Z to A)");
 });
 
@@ -121,11 +117,9 @@ When(/^click on 3rd filter option$/, async () => {
 	await $("//*[@id='header_container']/div[2]/div/span/select/option[3]").click();
 });
 
-Then(/^3rd filter option to be displayed$/, async () => {
+Then(/^3rd filter option to be displayed and has text$/, async () => {
 	await expect($("//*[@id='header_container']/div[2]/div/span/select/option[3]")).toBeDisplayed();
-});
-
-Then(/^3rd filter option has text$/, async () => {
+	
 	await expect($("//*[@id='header_container']/div[2]/div/span/span")).toHaveText("Price (low to high)");
 });
 
@@ -137,23 +131,20 @@ When(/^click on 4th filter option$/, async () => {
 	await $("//*[@id='header_container']/div[2]/div/span/select/option[4]").click();
 });
 
-Then(/^4th filter option to be displayed$/, async () => {
+Then(/^4th filter option to be displayed and has text$/, async () => {
 	await expect($("//*[@id='header_container']/div[2]/div/span/select/option[4]")).toBeDisplayed();
-});
 
-Then(/^4th filter option has text$/, async () => {
 	await expect($("//*[@id='header_container']/div[2]/div/span/span")).toHaveText("Price (high to low)");
 });
 
-Then(/^names of the products is clickable$/, async () => {
+Then(/^4th filter option has text$/, async () => {
+});
+
+Then(/^names, images, buttons of the products is clickable$/, async () => {
 	await expect($$(".inventory_item_name")).toBeClickable();
-});
-
-Then(/^images of the products is clickable$/, async () => {
+	
 	await expect($$(".inventory_item_img")).toBeClickable();
-});
-
-Then(/^button of the products is clickable$/, async () => {
+	
 	await expect($$(".btn_inventory")).toBeClickable();
 });
 
@@ -169,15 +160,11 @@ Then(/^social icons to be clickable$/, async () => {
 	await expect($$(".social")).toBeClickable();
 });
 
-When(/^click on Twitter icon$/, async () => {
+When(/^click on the social icons$/, async () => {
 	await $("//*[@id='page_wrapper']/footer/ul/li[1]/a").click();
-});
-
-When(/^click on Facebook icon$/, async () => {
+	
 	await $("//*[@id='page_wrapper']/footer/ul/li[2]/a").click();
-});
-
-When(/^click on Linkedln icon$/, async () => {
+	
 	await $("//*[@id='page_wrapper']/footer/ul/li[3]/a").click();
 });
 
