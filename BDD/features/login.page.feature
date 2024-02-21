@@ -50,8 +50,4 @@ Feature: Test Login page
     When click on Linkedln icon
     Then copyright has text
     When open burger menu
-    And log out from the page
-
-    
-
- 
+    And log out from the page 
