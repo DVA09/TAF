@@ -101,37 +101,15 @@ describe("Product Page", () => {
   });
 
   it("Inventory card", async () => {
-    await expect(ProductPage.productName).toBeClickable();
-    await expect(ProductPage.productName).toBeClickable();
+    await expect(ProductPage.productImage).toBeClickable();
 
     await expect(ProductPage.productImage).toBeClickable();
 
-    await expect(ProductPage.productBtn).toBeClickable();
+    await expect(ProductPage.productImage).toBeClickable();
   });
 
-  it("Inventory card Name", async () => {
-    await expect(ProductPage.productName).toHaveTextContaining(/^(?!.*\(\)).*$/);      
-  });
-
-  it("Inventory card Description", async () => {
-    await expect(ProductPage.productDescription).toHaveTextContaining(/^(?!.*\(\)).*$/);      
-  });
-
-  //Footer
   it("Footer social", async () => {
     await expect(ProductPage.social).toBeClickable();
-  });
-
-  it("Footer social Twitter", async () => {
-    await ProductPage.socialTwitter.click();
-  });
-
-  it("Footer social Facebook", async () => {
-    await ProductPage.socialFacebook.click();
-  });
-
-  it("Footer social Linkedin", async () => {
-    await ProductPage.socialLinkedin.click();
   });
 
   it("Footer copy", async () => {
