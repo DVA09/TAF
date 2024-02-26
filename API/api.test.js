@@ -15,3 +15,9 @@ test('Create a new user', async () => {
     expect(response.status).toBe(200);
     console.log(response);
 });
+
+test('User with ID 0 exists', async () => {
+    const response = await axios.get('https://petstore.swagger.io/v2/user/login?username=Test%20UserLastName&password=test12356_)');
+    expect(response.status).toBe(200);
+    console.log(response);
+});
