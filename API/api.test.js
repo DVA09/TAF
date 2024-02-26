@@ -13,11 +13,27 @@ test('Create a new user', async () => {
     };
     const response = await axios.post('https://petstore.swagger.io/v2/user', user);
     expect(response.status).toBe(200);
-    console.log(response);
+    // console.log(response);
 });
 
 test('User with ID 0 exists', async () => {
     const response = await axios.get('https://petstore.swagger.io/v2/user/login?username=Test%20UserLastName&password=test12356_)');
+    expect(response.status).toBe(200);
+    // console.log(response);
+});
+
+test('Updated user', async () => {
+    const response = await axios.put('https://petstore.swagger.io/v2/user/New%20User', {
+        username: "New User"
+    });
+    expect(response.status).toBe(200);
+    // console.log(response);
+});
+
+test('Updated user', async () => {
+    const response = await axios.delete('https://petstore.swagger.io/v2/user/New%20User', {
+        username: "New User"
+    });
     expect(response.status).toBe(200);
     console.log(response);
 });
