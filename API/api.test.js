@@ -14,10 +14,11 @@ test('Create a new user', async () => {
     const response = await axios.post('https://petstore.swagger.io/v2/user', user);
     expect(response.status).toBe(200);
     expect(response.data.type).toBe("unknown");
-    expect(response.data.message).toBe("22");    
+    expect(response.data.message).toBe("22");
+    console.log(response);    
 });
 
-test('Create a new user', async () => {
+test('Create a new user negative', async () => {
     const user = {
         "id": "",
         "username": "Test UserLastName",
