@@ -1,6 +1,7 @@
 const { Given, When } = require('@wdio/cucumber-framework');
 const { expect } = require('@wdio/globals')
 const axios = require('axios');
+const address = require("../utils/url.json");
 
 let response;
 const user = {
@@ -14,8 +15,8 @@ const user = {
     "userStatus": 0
 };
 
-Given(/^Send POST request to "([^"]*)"$/, async (url) => {    
-    response = await axios.post(url, user);
+Given(/^Send positive POST request$/, async () => {    
+    response = await axios.post(address.url, user);
 });
 
 When(/^Check status code, type, message of responce$/, async () => {
@@ -24,9 +25,9 @@ When(/^Check status code, type, message of responce$/, async () => {
     await expect(response.data.message).toBe("22");
 });
 
-Given(/^Send negative POST request to "([^"]*)"$/, async (url) => {
-    user.id = '';
-    response = await axios.post(url, user);
+Given(/^Send negative POST request$/, async () => {
+	user.id = "";
+    response = await axios.post(address.url, user);
 });
 
 When(/^Check status code, type, message of responce negative$/, async () => {
@@ -35,18 +36,18 @@ When(/^Check status code, type, message of responce negative$/, async () => {
     await expect(response.data.message).toBe("22");
 });
 
-Given(/^Send GET request to "([^"]*)"$/, async (url) => {
-	response = await axios.get(url);
-});    
+Given(/^Send GET request with username "([^"]*)" and password "([^"]*)"$/, async (username, password) => {
+	response = await axios.get(`${address.url}/login?username=${username}&password=${password}`);
+});
 
 When(/^Check status code, type of GET responce$/, async () => {
 	await expect(response.status).toBe(200);
     expect(response.data.type).toBe("unknown"); 
 });
 
-Given(/^Send PUT request to "([^"]*)"$/, async (url) => {
-	response = await axios.put(url, {
-        username: "New User"
+Given(/^Send PUT request with username "([^"]*)"$/, async (username) => {
+	response = await axios.put(`${address.url}/New%20User`, {
+        username: username
     });
 });
 
@@ -56,9 +57,10 @@ When(/^Check status code, type, message of PUT responce$/, async () => {
     await expect(response.data.message).toBe("9223372036854775807"); 
 });
 
-Given(/^Send DELETE request to "([^"]*)"$/, async (url) => {
-	response = await axios.delete(url, {
-        username: "New User"
+
+Given(/^Send DELETE request with username "([^"]*)"$/, async (username) => {
+	response = await axios.delete(`${address.url}/New%20User`, {
+        username: username
     });
 });
 
@@ -68,8 +70,9 @@ When(/^Check status code, type of DELETE responce$/, async () => {
     await expect(response.data.message).toBe("New User");
 });
 
-Given(/^Send DELETE purchase order request to "([^"]*)"$/, async (url) => {
-	response = await axios.delete(url, {
+
+Given(/^Send DELETE purchase order request$/, async () => {
+	response = await axios.delete(`${address.url}/order/123`, {
         orderId: "123"
     });
 });
