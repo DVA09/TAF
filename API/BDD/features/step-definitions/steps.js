@@ -54,7 +54,6 @@ Then(/^Check status code, type of GET responce$/, async () => {
     expect(response.data.type).toBe("unknown"); 
 });
 
-
 Given(/^Send PUT request to "([^"]*)"$/, async (url) => {
 	response = await axios.put(url, {
         username: "New User"
@@ -67,7 +66,6 @@ Then(/^Check status code, type, message of PUT responce$/, async () => {
     await expect(response.data.message).toBe("9223372036854775807"); 
 });
 
-
 Given(/^Send DELETE request to "([^"]*)"$/, async (url) => {
 	response = await axios.delete(url, {
         username: "New User"
@@ -79,7 +77,6 @@ Then(/^Check status code, type of DELETE responce$/, async () => {
     await expect(response.data.type).toBe("unknown");
     await expect(response.data.message).toBe("New User");
 });
-
 
 Given(/^Send DELETE purchase order request to "([^"]*)"$/, async (url) => {
 	response = await axios.delete(url, {
