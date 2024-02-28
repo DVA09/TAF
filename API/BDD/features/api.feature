@@ -1,7 +1,5 @@
 Feature: API testing different endpoints
-
   Scenario: Create a new user
-
     Given Send positive POST request
     When Check status code, type, message of responce
 
