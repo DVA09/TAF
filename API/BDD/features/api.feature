@@ -2,7 +2,7 @@ Feature: API testing different endpoints
 
   Scenario: Create a new user
 
-    Given Send request to "https://petstore.swagger.io/v2/user"
+    Given Send POST request to "https://petstore.swagger.io/v2/user"
     When Check status code, type, message of responce
 
   Scenario: Create a new user negative

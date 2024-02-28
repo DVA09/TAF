@@ -14,7 +14,7 @@ const user = {
     "userStatus": 0
 };
 
-Given(/^Send request to "([^"]*)"$/, async (url) => {    
+Given(/^Send POST request to "([^"]*)"$/, async (url) => {    
     response = await axios.post(url, user);
 });
 
